@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #a6a6a6;
+  font-family: 'Lilita one';
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: #919191;
+}
+
+.logoName {
+  font-size: 2rem;
+}
+
+.navButtons ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 10px;
+}
+
+.navButtons li {
+  margin: 0 8px;
+  font-size: 1.8rem;
+}
+
+/* Styling the posts */
+
+.post {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 25px 0;
+  padding: 10px;
+}
+
+.identities {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.post .identities img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 7px 10px 0;
+}
+
+.identities .name {
+  font-size: 1.4rem;
+}
+
+.post .quote {
+  font-size: 1.9rem;
+  text-align: center;
+  padding: 10px 25px;
+  line-height: 2.5rem;
+}
