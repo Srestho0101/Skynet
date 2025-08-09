@@ -6,7 +6,7 @@
 
 body {
   background: #a6a6a6;
-  font-family: 'Lilita one';
+  font-family: 'Lilita one', Serif;
 }
 
 nav {
@@ -60,7 +60,7 @@ nav {
 }
 
 .post .quote {
-  font-size: 1.9rem;
+  font-size: 2rem;
   text-align: center;
   padding: 10px 25px;
   line-height: 2.5rem;
