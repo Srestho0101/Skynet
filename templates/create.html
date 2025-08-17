@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create a New Post</h2>
+
+<form method="POST" enctype="multipart/form-data">
+  <label>Author:</label><br>
+  <input type="text" name="author" required><br><br>
+
+  <label>Quote:</label><br>
+  <textarea name="quote" required></textarea><br><br>
+
+  <label>Upload Photo:</label><br>
+  <input type="file" name="photo" accept="image/*"><br><br>
+
+  <button type="submit">Create Post</button>
+</form>
+{% endblock %}

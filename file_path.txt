@@ -1,0 +1,17 @@
+Skynet/
+│
+├── app.py
+├── requirements.txt
+├── static/
+│   ├── styles.css
+│   ├── script.js
+│   └── Photos/
+│       ├── Srestho.png
+│       ├── Tony_Stark.jpeg
+│       ├── Banglar_Gamer.png
+│       └── Kaka_Babu.jpg
+└── templates/
+    ├── base.html
+    ├── index.html
+    ├── login.html
+    └── user.html

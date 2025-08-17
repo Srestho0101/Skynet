@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  </head>
-  <body>
-    
-    <h1>{{ username }}</h1>
-    
-    <script src="index.js"></script>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}{{ username }} - Skynet{% endblock %}
+{% block content %}
+<h2 style="text-align:center; margin:20px 0;">{{ username }}'s Posts</h2>
+<section class="posts">
+  {% for post in posts %}
+  <div class="post">
+    <div class="identities">
+      {% if post.image_filename %}
+        <img src="{{ url_for('static', filename='Photos/' ~ post.image_filename) }}" alt="Post Image" class="post-image">
+        {% endif %}
+      <span class="name">{{ post.author }}</span>
+    </div>
+    <div class="quote">
+      <p>{{ post.quote }}</p>
+    </div>
+  </div>
+  {% else %}
+  <p style="text-align:center; padding:20px;">No posts from {{ username }} yet!</p>
+  {% endfor %}
+</section>
+{% endblock %}

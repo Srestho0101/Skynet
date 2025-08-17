@@ -1,78 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <!-- Lilita one -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
-    
-    <!-- Font awesome -->
-    <script src="https://kit.fontawesome.com/77f6773f8b.js" crossorigin="anonymous"></script>
-    
-    <title>Skynet</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  </head>
-  <body>
-    
-    <header>
-      <nav>
-        <div class="logo">
-          <p><span class="logoName">Skynet</span></p>
-        </div>
-        <div class="navButtons">
-          <ul>
-            <li><i class="fa-solid fa-house-user"></i></li>
-            <li><i class="fa-solid fa-pen-to-square"></i></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    
-    <main>
-      <section class="posts">
-        <div class="post">
-          <div class="identities">
-            <img src="static/Photos/Srestho.png">
-            <span class="name">Muntah Mahfuz Srestho</span>
-          </div>
-          <div class="quote">
-            <p>Building the momentum is the hardest part. But if you can gain the momentum once, you become unstoppable!</p>
-          </div>
-        </div>
-        <div class="post">
-          <div class="identities">
-            <img src="static/Photos/Tony_Stark.jpeg">
-            <span class="name">Tony Stark</span>
-          </div>
-          <div class="quote">
-            <p>If you're nothing without this suit, then you shouldn't have it.</p>
-          </div>
-        </div>
-        <div class="post">
-          <div class="identities">
-            <img src="static/Photos/Banglar_Gamer.png">
-            <span class="name">Banglar Gamer</span>
-          </div>
-          <div class="quote">
-            <p>Pain now, suffer later...</p>
-          </div>
-        </div>
-        <div class="post">
-          <div class="identities">
-            <img src="static/Photos/Kaka_Babu.jpg">
-            <span class="name">Kaka Babu</span>
-          </div>
-          <div class="quote">
-            <p>In a world of joy, I chose suffering!</p>
-          </div>
-        </div>
-      </section>
-    </main>
-    
-    <script src="script.js"></script>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Home - Skynet{% endblock %}
+{% block content %}
+<section class="posts">
+  {% for post in posts %}
+  <div class="post">
+    <div class="identities">
+      {% if post.image_filename %}
+        <img src="{{ url_for('static', filename='Photos/' ~ post.image_filename) }}" alt="Post Image" class="post-image">
+        {% endif %}
+      <span class="name">{{ post.author }}</span>
+    </div>
+    <div class="quote">
+      <p>{{ post.quote }}</p>
+    </div>
+  </div>
+  {% else %}
+  <p style="text-align:center; padding:20px;">No posts yet — create one!</p>
+  {% endfor %}
+</section>
+{% endblock %}
