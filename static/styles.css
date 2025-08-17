@@ -6,7 +6,7 @@
 
 body {
   background: #a6a6a6;
-  font-family: 'Lilita one', Serif;
+  font-family: 'Lilita One', cursive;
 }
 
 nav {
@@ -33,8 +33,7 @@ nav {
   font-size: 1.8rem;
 }
 
-/* Styling the posts */
-
+/* Posts */
 .post {
   border-top: 2px solid black;
   border-bottom: 2px solid black;
@@ -64,4 +63,28 @@ nav {
   text-align: center;
   padding: 10px 25px;
   line-height: 2.5rem;
+}
+
+/* Flash messages */
+.flash-messages {
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.flash {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.flash.success { background: #4caf50; color: white; }
+.flash.warning { background: #ff9800; color: white; }
+.flash.danger  { background: #f44336; color: white; }
+
+.post-image {
+  width: 300px;          /* square size */
+  height: 300px;         /* same width & height = 1:1 ratio */
+  object-fit: cover;     /* crop instead of stretch */
+  border-radius: 12px;   /* optional rounded corners */
 }

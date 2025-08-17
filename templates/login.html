@@ -1,26 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Skynet</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  </head>
-  <body>
-    
-    <header>
-      
-    </header>
-    <main>
-      <form method="POST">
-        <input name="name" id="name" placeholder="Enter your name..." required>
-        <input name="password" id="password" placeholder="Enter your password..." required>
-        <input type="submit">
-      </form>
-    </main>
-    
-    
-    <script src="script.js"></script>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block title %}Login - Skynet{% endblock %}
+{% block content %}
+<h2 style="text-align:center; margin:20px 0;">Login</h2>
+<form method="POST" style="max-width:300px; margin:auto;">
+  <label>Username:</label>
+  <input type="text" name="username" placeholder="Enter your name" required style="width:100%; padding:5px; margin:5px 0;">
+  <button type="submit" style="width:100%; padding:5px;">Login</button>
+</form>
+{% endblock %}
